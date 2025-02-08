@@ -37,8 +37,10 @@ Route::get('/myticket', [TicketController::class, 'ticket']);
 Route::get('/payment', [PaymentController::class, 'index']);
 
 // API
-Route::get('/api/users', [UsersController::class, 'index_users']);
-Route::get('/api/ticket', [TicketController::class, 'index_ticket']);
-Route::get('/api/films', [FilmsController::class, 'index_films']);
-Route::get('/api/studio', [StudioController::class, 'index_studio']);
-Route::get('/api/payment', [PaymentController::class, 'index_payment']);
+Route::get('api/users', [UsersController::class, 'index_users']);
+Route::get('api/ticket', [TicketController::class, 'index_ticket']);
+Route::get('api/films', [FilmsController::class, 'index_films']);
+Route::get('api/studio', [StudioController::class, 'index_studio']);
+Route::get('api/payment', [PaymentController::class, 'index_payment']);
+
+Route::post('api/add/users', [UsersController::class, 'store_users']);

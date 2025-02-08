@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('id_users',10) -> primary();
             $table->string('nama', 50);
             $table->string('username',50);
-            $table->string('password', 50);
+            $table->string('password', 100);
         });
     }
 
