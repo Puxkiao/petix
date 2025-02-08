@@ -44,3 +44,15 @@ Route::get('api/studio', [StudioController::class, 'index_studio']);
 Route::get('api/payment', [PaymentController::class, 'index_payment']);
 
 Route::post('api/add/users', [UsersController::class, 'store_users']);
+Route::post('api/add/films', [FilmsController::class, 'store_films']);
+Route::post('api/add/studio', [StudioController::class, 'store_studio']);
+Route::post('api/add/ticket', [TicketController::class, 'store_ticket']);
+Route::post('api/add/payment', [PaymentController::class, 'store_payment']);
+
+Route::get('api/user/{id}', [UsersController::class, 'show_user']);
+Route::get('api/ticket/{id}', [TicketController::class, 'show_ticket']);
+Route::get('api/film/{id}', [FilmsController::class, 'show_film']);
+Route::get('api/payment/{id}', [PaymentController::class, 'show_payment']);
+
+Route::put('api/user/update/{id}', [UsersController::class, 'update_user']);
+Route::put('api/ticket/update/{id}', [TicketController::class, 'update_ticket']);

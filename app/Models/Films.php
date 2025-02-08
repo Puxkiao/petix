@@ -12,5 +12,5 @@ class Films extends Model
     protected $keyType = 'string';
     public $timestamps = false;
     protected $table = 'films';
-    protected $fillable = ['judul_films','tanggal','durasi','jam_tayang' ];
+    protected $fillable = ['id_films','judul_films','tanggal','durasi','jam_tayang' ];
 }

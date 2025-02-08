@@ -12,5 +12,5 @@ class Studio extends Model
     protected $keyType = 'string';
     public $timestamps = false;
     protected $table = 'studio';
-    protected $fillable = ['nama_studio','kursi','durasi','lokasi' ];
+    protected $fillable = ['id_studio','nama_studio','kursi','lokasi' ];
 }

@@ -12,5 +12,5 @@ class Payment extends Model
     protected $keyType = 'string';
     public $timestamps = false;
     protected $table = 'payment';
-    protected $fillable = ['id_ticket','payment_method','total_price','status','amount','payment_date'];
+    protected $fillable = ['id_payment','id_ticket','payment_method','total_price','status','amount','payment_date'];
 }

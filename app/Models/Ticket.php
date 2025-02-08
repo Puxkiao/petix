@@ -12,5 +12,5 @@ class Ticket extends Model
     protected $keyType = 'string';
     public $timestamps = false;
     protected $table = 'ticket';
-    protected $fillable = ['id_users','id_studio','id_films','harga','status' ];
+    protected $fillable = ['id_ticket','id_users','id_studio','id_films','price','status' ];
 }
