@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('status', 10);
             $table->string('amount', 10);
             $table->foreign('id_ticket')->references('id_ticket')->on('ticket');
-            $table->date('payment_date');
+            $table->timestamp('payment_date');
 
         });
     }

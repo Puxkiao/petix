@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('studio', function (Blueprint $table) {
             $table->string('id_studio',10) -> primary();
             $table->string('nama_studio', 50);
-            $table->date('kursi',50);
+            $table->string('kursi',50);
             $table->string('lokasi', 10);
             
         });

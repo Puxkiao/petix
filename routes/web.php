@@ -6,6 +6,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\FilmsController;
+use App\Http\Controllers\StudioController;
+
 
 Route::get( uri: '/', action: fn ()=> view(view:'home'));
 Route::get( uri: 'users', action: function (){
@@ -31,3 +35,10 @@ Route::get('/myticket', [TicketController::class, 'ticket']);
 
 
 Route::get('/payment', [PaymentController::class, 'index']);
+
+// API
+Route::get('/api/users', [UsersController::class, 'index_users']);
+Route::get('/api/ticket', [TicketController::class, 'index_ticket']);
+Route::get('/api/films', [FilmsController::class, 'index_films']);
+Route::get('/api/studio', [StudioController::class, 'index_studio']);
+Route::get('/api/payment', [PaymentController::class, 'index_payment']);
