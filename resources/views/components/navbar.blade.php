@@ -11,22 +11,30 @@
 
             Menu open: "hidden", Menu closed: "block"
           -->
-          <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
+          <a href="{{ url('/myticket') }}" class="d-inline-block"> sample
+              <span>
+                  <!-- <svg class="block size-6 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg> -->
+              </span>
+          </a>
+
+
           <!--
             Icon when menu is open.
 
             Menu open: "block", Menu closed: "hidden"
           -->
-          <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <!-- <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
+          </svg> -->
         </button>
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex shrink-0 items-center">
-        <img class="h-20 w-auto" src="{{ asset('images/logo.png') }} "  alt="Your Company" >
+        <a href="{{ url('/') }}">
+    <img class="h-20 w-auto" src="{{ asset('images/logo.png') }}" alt="Your Company">
+    </a>
         </div>
         <!-- <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
@@ -39,15 +47,15 @@
         </div> -->
       </div>
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-        <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+        <a href="{{ url('/myticket') }}" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
           <span class="absolute -inset-1.5"></span>
-          <span class="sr-only">View Tiketc</span>
+          <span class="sr-only">View Tiket</span>
           <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
   <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v3a2 2 0 1 0 0 4v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a2 2 0 1 0 0-4Z" />
   <path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6M9 12h6M9 17h6" />
 </svg>
 
-        </button>
+        </a>
 
         <!-- Profile dropdown -->
       <div class="relative ml-3 group">
@@ -70,9 +78,9 @@
               To: "transform opacity-0 scale-95"
           -->
         <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden hidden group-hover:block">
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700">Login</a>
+          <a href="{{url('/login')}}" class="block px-4 py-2 text-sm text-gray-700">Login</a>
           <!-- <a href="#" class="block px-4 py-2 text-sm text-gray-700">Settings</a> -->
-          <a href="#" class="block px-4 py-2 text-sm text-gray-700">Sign in</a>
+          <a href="{{url('/register')}}" class="block px-4 py-2 text-sm text-gray-700">Register</a>
         </div>
       </div>
       </div>

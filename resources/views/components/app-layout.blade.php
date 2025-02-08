@@ -27,17 +27,13 @@
         </div>
     </header>
     @endisset
-
     <main>
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             {{ $slot }}
         </div>
     </main>
-    <x-dropdown></x-dropdown>
-    <x-films></x-films>
     
     <x-footer></x-footer>
-
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>

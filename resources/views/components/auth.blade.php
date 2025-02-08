@@ -1,14 +1,9 @@
-<x-app-layout title="login">
-
-<x-slot name="heading">
-        Login
-    </x-slot>
-    <div class="wrapper">
+<div class="wrapper">
         <div class="logo">
-            <img src="{{ asset('images/logo.png') }}" alt="">
+            <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="">
         </div>
         <div class="text-center mt-4 name">
-            PETIX
+            Twitter
         </div>
         <form class="p-3 mt-3">
             <div class="form-field d-flex align-items-center">
@@ -25,7 +20,3 @@
             <a href="#">Forget password?</a> or <a href="#">Sign up</a>
         </div>
     </div>
-
-
-
-</x-app-layout>
