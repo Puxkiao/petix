@@ -21,7 +21,7 @@
             <h1 class="fw-bold">Book Your Ticket</h1>
             <p class="text-muted">Select your preferred date, time, and seat for the movie.</p>
 
-            <form action="{{ route('tiket.store') }}" method="POST">
+            <form method="POST">
                 @csrf
                 <!-- Movie Title -->
                 <div class="mb-3">

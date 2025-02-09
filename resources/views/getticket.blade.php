@@ -1,3 +1,5 @@
+{{-- {{dd($data)}}   --}}
+
 <x-app-layout>
 <div class="container my-5">
     <!-- Breadcrumb Navigation -->
@@ -12,9 +14,8 @@
         <!-- Movie Poster -->
         <div class="col-md-4">
             <div class="card shadow-sm">
-                <img src="{{ asset('images/mufasa.jpg') }}" class="card-img-top rounded" alt="Mufasa">
+                <img src="{{ asset("images/$data->poster") }}" class="card-img-top rounded" alt="${{$data->judul_films}}">
             </div>
-            <a href="https://youtu.be/o17MF9vnabg?si=Jitajmq1eXvfL1xS" target="_blank" class="btn btn-primary mb-2">Watch Trailer</a>
         </div>
 
         <!-- Booking Form -->
@@ -22,31 +23,41 @@
             <h1 class="fw-bold">Pesan Tiket Anda</h1>
             <p class="text-muted">Pilih tangal, waktu dan tempat duduk anda.</p>
 
-            <form  method="POST">
+            <form action="{{url("buyticket")}}" method="POST">
                 @csrf
+                <input type="hidden" name="id_film" value="{{$data->id_films}}">
+                <input type="hidden" name="id_film" value="{{$data->id_films}}">
                 <!-- Movie Title -->
                 <div class="mb-3">
                     <label for="movieTitle" class="form-label">Movie</label>
-                    <input type="text" class="form-control" id="movieTitle" name="movieTitle" value="Mufasa" readonly>
+                    <input type="text" class="form-control" id="movieTitle" name="movieTitle" value="{{$data->judul_films}}" readonly>
                 </div>
 
                 <!-- Date Selection -->
                 <div class="mb-3">
                     <label for="date" class="form-label">Tanggal</label>
-                    <input type="date" class="form-control" id="date" name="date" required>
+                    <input type="date" class="form-control" id="date" name="date" value="{{$data->tanggal}}" readonly>
+                </div>
+{{-- 
+                <!-- Price Selection -->
+                <div class="mb-3">
+                    <label for="price" class="form-label">Harga</label>
+                    <input type="price" class="form-control" id="price" name="price" value="{{$data->price}}" readonly>
+                </div> --}}
+
+                <!-- Duration Selection -->
+                <div class="mb-3">
+                    <label for="duration" class="form-label">Durasi</label>
+                    <input type="duration" class="form-control" id="duration" name="duration" value="{{$data->durasi}}" readonly>
                 </div>
 
                 <!-- Time Selection -->
                 <div class="mb-3">
                     <label for="time" class="form-label">Waktu</label>
                     <select class="form-select" id="time" name="time" required>
-                        <option value="10:00">10:00</option>
-                        <option value="12:00">12:00</option>
-                        <option value="14:00">14:00</option>
-                        <option value="16:00">16:00</option>
-                        <option value="18:00">18:00</option>
-                        <option value="20:00">20:00</option>
-                        <option value="22:00">22:00</option>
+                        @foreach(explode(',', $data->jam_tayang) as $time)
+                            <option value="{{ $time }}">{{ $time }}</option>
+                        @endforeach
                     </select>
                 </div>
 

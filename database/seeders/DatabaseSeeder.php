@@ -29,8 +29,10 @@ class DatabaseSeeder extends Seeder
             'id_films'      => 'F001',
             'judul_films'   => 'Mufasa',
             'tanggal'       => '2025-02-08',
+            'poster'       => 'mufasa.jpg',
             'durasi'        => '2 Jam',
-            'jam_tayang'    => '18:00'
+            'jam_tayang'    => '12:00,14:00,16:00,18:00,20:00',
+            'film_url'      => 'https://www.youtube.com/watch?v=o17MF9vnabg'
         ]);
 
         Studio::insert([

@@ -211,3 +211,9 @@ input[type="text"] {
     border-radius: 10px;
     padding: 5px 10px;
 }
+
+.center-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

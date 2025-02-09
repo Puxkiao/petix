@@ -11,27 +11,23 @@ use App\Http\Controllers\FilmsController;
 use App\Http\Controllers\StudioController;
 
 
-Route::get( uri: '/', action: fn ()=> view(view:'home'));
-Route::get( uri: 'users', action: function (){
+Route::get('/', [MovieController::class, 'home']);
+Route::get('movies', [MovieController::class, 'index']);
+Route::get('addfilm', [MovieController::class, 'addfilm']);
+Route::get('ticket/{id}', [MovieController::class, 'show']);
+Route::post('buyticket', [MovieController::class, 'buyticket']);
 
-    $users = [
-        ['id' =>1, 'name'=>'john doe','email'=>'john@lawliet.com'],
-        ['id' =>1, 'name'=>'john doe','email'=>'john@lawliet.com'],
-    ];
+Route::get('login', [LoginController::class, 'index']);
+Route::get('logout', [LoginController::class, 'logout']);
+Route::post('loginUser', [LoginController::class, 'loginUser']);
 
-    return view (view: 'users.index', data: compact(var_name:'users'));
-});
-
-
-Route::get('/movies', [MovieController::class, 'index']);
-
-
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('register', [RegisterController::class, 'index']);
+Route::post('registerUser', [RegisterController::class, 'regis']);
 
 
 Route::get('/ticket', [TicketController::class, 'index']);
 Route::get('/myticket', [TicketController::class, 'ticket']);
+Route::get('/viewticket', [TicketController::class, 'viewticket']);
 
 
 Route::get('/payment', [PaymentController::class, 'index']);
@@ -54,5 +50,18 @@ Route::get('api/ticket/{id}', [TicketController::class, 'show_ticket']);
 Route::get('api/film/{id}', [FilmsController::class, 'show_film']);
 Route::get('api/payment/{id}', [PaymentController::class, 'show_payment']);
 
+//UPDATE
 Route::put('api/user/update/{id}', [UsersController::class, 'update_user']);
+Route::put('api/film/update/{id}', [FilmsController::class, 'update_film']);
+Route::put('api/studio/update/{id}', [StudioController::class, 'update_studio']);
 Route::put('api/ticket/update/{id}', [TicketController::class, 'update_ticket']);
+Route::put('api/payment/update/{id}', [PaymentController::class, 'update_payment']);
+
+//DELETE
+Route::delete('api/user/delete/{id}', [UsersController::class, 'destroy_user']);
+Route::delete('api/film/delete/{id}', [FilmsController::class, 'destroy_film']);
+Route::delete('api/studio/delete/{id}', [StudioController::class, 'destroy_studio']);
+Route::delete('api/ticket/delete/{id}', [TicketController::class, 'destroy_ticket']);
+Route::delete('api/payment/delete/{id}', [PaymentController::class, 'destroy_payment']);
+
+

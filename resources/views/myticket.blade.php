@@ -49,7 +49,7 @@
                 <p class="mb-0 text-muted">18:00</p>
             </div>
             <div>
-                <a href="#" class="text-primary fw-bold">View Ticket →</a>
+                <a href="{{url('/viewticket')}}" class="text-primary fw-bold">View Ticket →</a>
             </div>
         </div>
 

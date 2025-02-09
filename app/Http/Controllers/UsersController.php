@@ -17,7 +17,6 @@ class UsersController extends Controller
 
     public function store_users(Request $request){
         $v_users = Validator::make($request->all(), [
-            'id_users' => 'required',
             'nama' => 'required',
             'username' => 'required',
             'password' => 'required',
@@ -74,5 +73,14 @@ class UsersController extends Controller
         // Return success response
         return new UserResource(true, 'User Berhasil Diubah!', $id);
     }
+    
+    public function destroy_user(Users $id)
+    {
+        // destroy controller laravel
+        $id->delete();
+        return new UserResource(true, 'Data User Berhasil Dihapus!', $id);
+    }
+
+
     
 }

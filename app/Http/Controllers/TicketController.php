@@ -16,6 +16,10 @@ class TicketController extends Controller
     public function ticket(){
         return view('myticket');
     }
+    
+    public function viewticket(){
+        return view('viewticket');
+    }
 
     public function index_ticket(){
         $ticket = Ticket::all();
@@ -86,6 +90,13 @@ class TicketController extends Controller
     
         // Return success response
         return new UserResource(true, 'ticket Berhasil Diubah!', $id);
+    }
+
+    public function destroy_ticket(Ticket $id)
+    {
+        // destroy controller laravel
+        $id->delete();
+        return new UserResource(true, 'Data User Berhasil Dihapus!', $id);
     }
     
 }
