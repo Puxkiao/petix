@@ -83,13 +83,13 @@
         <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden hidden group-hover:block">
           <a href="{{ url('/logout') }}" class="block px-4 py-2 text-sm text-gray-700">Logout</a>
         </div>
-        @else
-          <!-- Dropdown menu, show/hide based on menu state. -->
-          <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden hidden group-hover:block">
-            <a href="{{ url('/login') }}" class="block px-4 py-2 text-sm text-gray-700">Login</a>
-            <a href="{{ url('/register') }}" class="block px-4 py-2 text-sm text-gray-700">Register</a>
-          </div>
-        @endif
+      @else
+        <!-- Dropdown menu, show/hide based on menu state. -->
+        <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden hidden group-hover:block">
+          <a href="{{ url('/login') }}" class="block px-4 py-2 text-sm text-gray-700">Login</a>
+          <a href="{{ url('/register') }}" class="block px-4 py-2 text-sm text-gray-700">Register</a>
+        </div>
+      @endif
       </div>
       </div>
     </div>
